@@ -16,12 +16,12 @@
                 templateUrl: 'partials/init.html',
             })
             .when('/hello', {
-                templateUrl: 'partials/hello.html',
+                templateUrl: 'partials/core/hello.html',
                 controller: 'HelloWorldController',
                 controllerAs: 'vm'
             })
             .when('/bye', {
-                templateUrl: 'partials/bye.html',
+                templateUrl: 'partials/core/bye.html',
                 controller: 'ByeByeController',
                 controllerAs: 'vm'
             });
