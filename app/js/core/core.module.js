@@ -4,26 +4,43 @@
     'use strict';
 
     angular
-        .module("app.core", ['ngRoute'])
+        .module("app.core", ['ui.router'])
+        .run(addStateToScope)
         .config(getRoutes);
 
-    // We define a function to configure the routes. This way we can change the 
-    // router module in the future.
-    getRoutes.$inject = ['$routeProvider'];
-    function getRoutes($routeProvider){
-       $routeProvider
-            .when('/', {
-                templateUrl: 'partials/init.html',
+
+    addStateToScope.$inject = ['$rootScope', '$state', '$stateParams'];
+    function addStateToScope($rootScope, $state, $stateParams){
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+    };
+
+    getRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function getRoutes($stateProvider, $urlRouterProvider){
+        
+        // We don't redirect any URL except a non-existent one.
+        $urlRouterProvider.otherwise('/');
+
+        // We define our states/routes
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: "partials/init.html"
             })
-            .when('/hello', {
-                templateUrl: 'partials/core/hello.html',
-                controller: 'HelloWorldController',
+
+            .state('hello', {
+                url: '/hello',
+                templateUrl: "partials/core/hello.html",
+                controller: "HelloWorldController",
                 controllerAs: 'vm'
+
             })
-            .when('/bye', {
-                templateUrl: 'partials/core/bye.html',
-                controller: 'ByeByeController',
+            .state('bye', {
+                url: '/bye',
+                template: "partials/core/bye.html",
+                controller: "ByeByeController",
                 controllerAs: 'vm'
-            });
+
+            })
     };
 })();
