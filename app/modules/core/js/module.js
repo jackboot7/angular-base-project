@@ -25,19 +25,19 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: "partials/init.html"
+                templateUrl: "templates/init.html"
             })
 
             .state('hello', {
                 url: '/hello',
-                templateUrl: "partials/core/hello.html",
-                controller: "HelloWorldController",
+                templateUrl: "modules/core/partials/hello.html",
+                controller: "HelloController",
                 controllerAs: 'vm'
 
             })
             .state('bye', {
                 url: '/bye',
-                template: "partials/core/bye.html",
+                templateUrl: "modules/core/partials/bye.html",
                 controller: "ByeByeController",
                 controllerAs: 'vm'
 
