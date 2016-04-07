@@ -3,13 +3,11 @@
 
     angular
         .module('app.core')
-        .factory('HelloWorldService', HelloWorldService);
+        .factory('ByeByeWorldService', ByeByeWorldService);
 
-    HelloWorldService.$inject = ['$resource'];
-    
-    function HelloWorldService($resource){
-        return $resource();
-
+    ByeByeWorldService.$inject = ['$resource'];
+    function ByeByeWorldService($resource){
+        return $resource('http://localhost:8000/app/static/data/person.json');
     };
 
 })();
