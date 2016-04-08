@@ -6,7 +6,9 @@
 (function (){
     'user strict';
     
-    angular.module('app', ['ngResource',
-            'app.core',
+    angular.module('app', [
+    	'ngResource',
+    	'ui.bootstrap',	
+        'app.core',
     ]);
 })();
