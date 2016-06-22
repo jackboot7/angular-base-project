@@ -22,6 +22,6 @@
         		vm.message = "Believe or not person isn't at home, leave your message at the beep, it must be ot it would pick up the phone, where would it be? Believe or not person's not home..."
         		console.log(vm.message);
         	}
-        	) 
+        ) 
     };
 })();

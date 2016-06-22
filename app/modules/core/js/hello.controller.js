@@ -30,7 +30,8 @@
                 templateUrl: 'modules/core/partials/modal/modal_example.html',
                 scope: $scope,
                 size: 'sm',
-                backdrop: 'static'
+                backdrop: 'static',
+                keyboard  : false
             });
         };
 
