@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 class="modal-title">Back</h3>
+</div>
+<div style="text-align: center" class="modal-body">
+    {{ vm.message }} 
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" 
+    ng-show="vm.acceptButton" 
+    type="button" 
+    ng-click="vm.goHome()">Accept</button>
+    
+    <button class="btn btn-danger" 
+    ng-show="vm.cancelButton" 
+    type="button" 
+    ng-click="vm.cancel()">Cancel</button>
+
+    <button class="btn btn-primary" 
+    ng-show="vm.okButton" 
+    type="button" 
+    ng-click="vm.ok()">OK</button>
+</div>
